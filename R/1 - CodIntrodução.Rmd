@@ -1,0 +1,62 @@
+Questão 1
+```{r}
+  Ana <- 8L
+  Paulo <- 12L
+  
+  
+  ifelse(Ana > Paulo, "A menina é mais velha", "O menino é mais velho")
+```
+Questão 2
+  
+```{r}
+   #Data Frame
+   class(BOD)
+```
+Questão 3
+
+```{r}
+  numbers = c(1:10)
+
+  i <- 1
+  
+  while (i <= 10) {
+    if (numbers[i] %% 2 == 0)
+      print(numbers[i])
+    
+    i <- i + 1
+  }
+```
+Questão 4
+
+```{r}
+  tail(women,10)
+```
+Questão 5
+
+```{r}
+  dados <- iris[50:100,c(2,3)]
+  plot(dados)
+```
+Questão 6
+
+```{r}
+  v1 <- c(1:10)
+  v2 <- c(1:10)
+  
+  print(v1 + v2)
+```
+Questão 7
+
+```{r}
+  col <- dim(CO2)[2]
+  lin <- dim(CO2)[1]
+  
+  print("Colunas: ")
+  print(col)
+  print("Linhas :")
+  print(lin)
+  
+  colnames(CO2)
+  rownames(CO2)
+```
+

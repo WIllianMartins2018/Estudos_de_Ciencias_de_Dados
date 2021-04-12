@@ -1,0 +1,46 @@
+
+Importando os dados
+
+```{r}
+dataset = read.csv(file.choose(), sep = ";")
+library(lattice)
+head(dataset)
+```
+
+Visualizando o PIB
+
+```{r}
+  boxplot(dataset$PIB, ylab="Valores")
+  #visualiando sem outlier
+  boxplot(dataset$PIB, ylab="Valores", outline = F)
+```
+
+
+```{r}
+#maiores PIB
+  dataMaioresPib = head(dataset[order(-dataset$PIB),],10)
+  barplot(dataMaioresPib$PIB, col = gray.colors(10), main="MAIORES PIBS")
+  legend("topright",legend=dataMaioresPib$MUNICIPIO,col = gray.colors(10), cex=0.9, lwd = 4)
+  box()
+```
+
+Visualiazando o Empenho
+
+```{r}
+  boxplot(dataset$VALOREMPENHO, ylab="Valores")
+  boxplot(dataset$VALOREMPENHO, ylab="Valores", outline = F)
+```
+
+```{r}
+#Maiores Empenhos
+   dataMaiorEmpenho = head(dataset[order(-dataset$VALOREMPENHO),],10)
+   #dataMaiorEmpenho
+   cores = gray.colors(10)
+   #cores(10)
+   barplot(dataMaiorEmpenho$VALOREMPENHO, col = cores, main = "Maiores Empenhos")
+   legend("topright", legend = dataMaiorEmpenho$MUNICIPIO, col = cores, cex=0.75, lwd = 4, ncol = 2)
+   box()
+```
+
+
+

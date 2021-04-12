@@ -1,0 +1,68 @@
+
+CARREGAR OS DADOS
+```{r}
+  dados = read.csv(file.choose(),sep=";", na.strings = "", stringsAsFactors = T)
+  head(dados)
+  summary(dados)
+  
+```
+IDENTIFICANDO NA'S
+
+```{r}
+  dados[!complete.cases(dados),]
+```
+
+EXPLORAÇÃO DE DADOS CATEGÓRICOS
+  
+APARÊNCIA, REMOVENDO VALOR INEXISTENTE (MENOS)
+```{r}
+   count = table(dados$Aparencia)
+   barplot(count, main="Aparência", xlab="Aparência")
+   
+   dados[dados$Aparencia == "menos",]$Aparencia = "chuva"
+   dados$Aparencia = factor(dados$Aparencia)
+   
+   summary(dados$Aparencia)
+```
+
+VENTO, REMOVENDO NAS
+
+```{r}
+  unique(dados$Vento)
+  summary(dados$Vento)
+
+  dados[is.na(dados$Vento),]$Vento = 'FALSO'
+  
+  dados[is.na(dados$Vento),]
+  unique(dados$Vento)
+
+```
+EXPLORAÇÃO DE DADOS NUMÉRICO
+
+
+TEMPERATURA, COLOCAR DENTRO DO PADRÃO, -130 A 130F
+
+```{r}
+   summary(dados$Temperatura)
+dados[dados$Temperatura < -130 | dados$Temperatura > 130 ,]$Temperatura
+
+dados[dados$Temperatura < -135 | dados$Temperatura > 130 ,]$Temperatura = median(dados$Temperatura) 
+
+summary(dados$Temperatura)
+```
+
+UMIDADE, REMOVENDO NA'S e COLOCANDO NO PADRÃO (0 a 100)
+
+```{r}
+   summary(dados$Umidade)
+   dados[dados$Umidade > 100 | dados$Umidade < 0,]$Umidade
+   
+   #Removendo NA
+   dados[is.na(dados$Umidade), ]$Umidade = median(dados$Umidade,na.rm = T)
+   
+   dados[dados$Umidade > 100 | dados$Umidade < 0,]$Umidade = median(dados$Umidade)
+   
+   summary(dados$Umidade)
+   
+```
+
