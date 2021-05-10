@@ -1,0 +1,35 @@
+
+Medidas de Centralidade
+Dados dos Jogadores
+```{r}
+  jogadores = c (40000, 18000, 12000, 250000, 30000, 140000, 300000, 40000, 800000)
+```
+
+Média
+```{r}
+  mean(jogadores)
+```
+Mediana
+
+```{r}
+  median(jogadores)
+```
+Quartis
+
+```{r}
+  quartis = quantile(jogadores)
+  quartis
+```
+
+Desvio padrão
+
+```{r}
+   sd(jogadores)
+```
+Resumo
+
+```{r}
+  summary(jogadores)
+1```
+
+
