@@ -1,0 +1,21 @@
+X = eventos, p = probabilidades, size = n_eventos
+
+Se jogar uma moeda 5 vezes, qual a probabilidade de dar 3 caras ?
+```{r}
+dbinom(x=3, size = 5, prob = 0.5)
+```
+Se eu passar 4 sinais de quatro tempos cada. Qual a probabilidae de pegar todos verdes?
+```{r}
+pbinom(q=4, size = 4, prob = 0.25)
+```
+Se eu fizer uma prova de 12 questões, chutando, qual a probabilidade de acertar 7 ?
+```{r}
+dbinom(x = 7, size = 12, prob = 0.25)
+```
+Se eu passar 4 sinais de quatro tempos cada. Qual a probabilidade de pegar 3 ou mais verde?
+
+```{r}
+  pbinom(q=2, size = 4, prob = 0.25, lower.tail = F)
+  dbinom(x=3, size = 4, prob = 0.25) + dbinom(x=4, size = 4, prob = 0.25)
+```
+

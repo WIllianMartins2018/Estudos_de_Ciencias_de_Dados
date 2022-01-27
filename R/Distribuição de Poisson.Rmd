@@ -1,0 +1,22 @@
+dpois = Probabilidade Pontual
+ppois = Probabilidade Acumulativa
+lower.tail False = maior que, cauda da direita
+
+Número médio de acidentes em um dia é igual a 2
+
+Qual a probabilidade de ocorrrerem 3 em 1 dia?
+```{r}
+ dpois(3, lambda = 2)
+```
+QUal a probabilidade de ocorrerem 3 ou menos em 1 dia?
+```{r}
+ppois(3, lambda = 2)
+```
+Qual probabilidade de ocorrerem menos que 3?
+```{r}
+ppois(2, lambda = 2)
+```
+Qual a probabilidade de ocorrerem mais que 3
+```{r}
+1 - ppois(3, lambda = 2)
+```   

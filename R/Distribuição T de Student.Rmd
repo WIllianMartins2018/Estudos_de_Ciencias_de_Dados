@@ -1,0 +1,7 @@
+Salario Cientista 75 por hora. Amostra 9. S=10. Qual a probabilidade de ser menor que 80 a hora ?
+t = 1.5, graus de liberdade
+
+```{r}
+  pt(1.5,8)
+```
+

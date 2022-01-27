@@ -1,0 +1,56 @@
+Anova
+
+```{r}
+tratamento = read.csv("anova.csv", sep = ";")
+tratamento
+```
+
+Vizuliando as distribuições dos remédios por horas
+
+```{r}
+boxplot(tratamento$Horas ~ tratamento$Remedio)
+```
+
+Executamos a Análise da Variança
+Observa valor de p maior que o 0,05 (Pr(>F))
+H0 é que não há diferença significativa
+
+```{r}
+an = aov(Horas ~ Remedio, data = tratamento)
+summary(an)
+```
+Anova de dois fatores
+Nenhum valor de P mostra diferença significativa
+
+```{r}
+an = aov(Horas ~ Remedio * Sexo, data = tratamento)
+summary(an)
+```
+Se houver diferença o teste de Turkey é executado
+
+```{r}
+  Tukey = TukeyHSD(an)
+  Tukey
+```
+Grafico de Teste
+
+```{r}
+plot(Tukey)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
